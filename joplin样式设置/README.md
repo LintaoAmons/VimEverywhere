@@ -8,4 +8,11 @@
 
 # 样式收集
 
-文件夹下包括 `userchrome.css`,`userstyle.css`以及示例图
+各文件夹下包括 `userchrome.css`,`userstyle.css`以及示例图
+
+## [Styles 2 preview](./styles/2/)
+
+![style 2 preview 1](./styles/2/page1.png)
+![style 2 preview 2](./styles/2/page2.png)
+![style 2 preview 3](./styles/2/page3.png)
+
