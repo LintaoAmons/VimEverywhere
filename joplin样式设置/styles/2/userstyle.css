@@ -1,0 +1,5 @@
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+h1, h2, h3, h4, h5, h6 {
+    color: #E2DFDB  !important;
+    border-bottom: 2px solid #A9A9AA;
+}
