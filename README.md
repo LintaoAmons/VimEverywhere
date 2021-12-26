@@ -10,16 +10,18 @@
 # 推荐观看顺序
 
 - 键盘设置
-	- [Bilibili](https://www.bilibili.com/video/BV12g411N7hv/)
 	- [README](./Vim/karabiner改键设置/README.md)
+	- [视频链接](https://www.bilibili.com/video/BV12g411N7hv/)
 - Vim 快速移动及定位
-  - [Video 上集](https://www.bilibili.com/video/BV1K44y1a7Sw/)
-  - [Video 下集](https://www.bilibili.com/video/BV1K44y1a7Sw/)
+	- [README](./Vim/移动/README.md)
+  - [视频链接 上集](https://www.bilibili.com/video/BV1K44y1a7Sw/)
+  - [视频链接 下集](https://www.bilibili.com/video/BV1734y1r7E5/)
 	- [Diagram 源文件](./Vim/移动/Vim%20Movements.drawio)
 		- ![movement](./Vim/移动/移动定位.png)
 
 # Topics
 ## Joplin | Free, Security, Multi-platform | 专属知识库构建软件
 
+- [Joplin简介视频链接](https://www.bilibili.com/video/BV1hY41147ix/)
 - [Joplin 样式设置](./joplin样式设置/README.md)
 - [Joplin Graph 插件](https://www.bilibili.com/video/BV1rb4y1v7cV/)
