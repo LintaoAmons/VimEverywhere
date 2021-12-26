@@ -5,4 +5,8 @@
 # 视频参考
 
 - [改键思路](https://www.bilibili.com/video/BV12g411N7hv/)
+- 改键示意图
+	- [源文件](./Keyboard改键示意图.drawio)
+	- ![Modify Keyboard1](./改键设置.png)
+	- ![Modify Keyboard2](./改键设置2.png)
 
