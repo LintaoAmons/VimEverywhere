@@ -16,8 +16,6 @@
 	- [README](./Vim/移动/README.md)
   - [视频链接 上集](https://www.bilibili.com/video/BV1K44y1a7Sw/)
   - [视频链接 下集](https://www.bilibili.com/video/BV1734y1r7E5/)
-	- [Diagram 源文件](./Vim/移动/Vim%20Movements.drawio)
-		- ![movement](./Vim/移动/移动定位.png)
 
 # Topics
 ## Joplin | Free, Security, Multi-platform | 专属知识库构建软件
