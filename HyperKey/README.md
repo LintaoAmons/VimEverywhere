@@ -4,12 +4,13 @@
 
 # Video
 
-- [视频讲解|正在做]()
+- [视频讲解](https://www.bilibili.com/video/BV14r4y1m7yB/)
 - Timeline
-	- 效果演示
-	- 简介（涉及软件及其他平台） KeyBoard 一览
-	- Amethyst && Shiftit 窗口管理
-	- Alfred 软件切换
+	- 0:00 效果演示
+	- 4:10 简介（涉及软件及其他平台） KeyBoard 一览
+	- 8:53 Amethyst && Shiftit 窗口管理
+	- 17:14 Alfred 软件切换
+	- 20:15 总结
 ## 思路
 左边管理窗口，右边切换软件
 

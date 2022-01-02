@@ -16,6 +16,9 @@
 	- [README](./Vim/移动/README.md)
   - [视频链接 上集](https://www.bilibili.com/video/BV1K44y1a7Sw/)
   - [视频链接 下集](https://www.bilibili.com/video/BV1734y1r7E5/)
+- HyperKey 全键盘窗口管理及软件切换
+	- [README](./HyperKey/README.md)
+	- [视频链接](https://www.bilibili.com/video/BV14r4y1m7yB/)
 
 # Topics
 ## Joplin | Free, Security, Multi-platform | 专属知识库构建软件
