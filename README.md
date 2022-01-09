@@ -16,9 +16,13 @@
 	- [README](./Vim/移动/README.md)
   - [视频链接 上集](https://www.bilibili.com/video/BV1K44y1a7Sw/)
   - [视频链接 下集](https://www.bilibili.com/video/BV1734y1r7E5/)
+- 语义化 Vim 命令 Pattern
+	- [README](./Vim/语义化命令/README.md)
+	- [视频链接](https://www.bilibili.com/video/BV1Y3411a7VG/)
 - HyperKey 全键盘窗口管理及软件切换
 	- [README](./HyperKey/README.md)
 	- [视频链接](https://www.bilibili.com/video/BV14r4y1m7yB/)
+	- [HyperKey的设置请看键盘设置一节](./Vim/karabiner改键设置/README.md)
 
 # Topics
 ## Joplin | Free, Security, Multi-platform | 专属知识库构建软件
