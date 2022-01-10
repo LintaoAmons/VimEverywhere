@@ -7,7 +7,7 @@
 	- 在 Joplin 使用Vim，记笔记，构建知识库
 	- 使用键盘切换软件窗口，分屏，调出常用软件
 
-# 推荐观看顺序
+## 推荐观看顺序
 
 - 键盘设置
 	- [README](./Vim/karabiner改键设置/README.md)
@@ -24,9 +24,11 @@
 	- [视频链接](https://www.bilibili.com/video/BV14r4y1m7yB/)
 	- [HyperKey的设置请看键盘设置一节](./Vim/karabiner改键设置/README.md)
 
-# Topics
 ## Joplin | Free, Security, Multi-platform | 专属知识库构建软件
 
 - [Joplin简介视频链接](https://www.bilibili.com/video/BV1hY41147ix/)
-- [Joplin 样式设置](./joplin样式设置/README.md)
+- [Joplin 样式设置](./Joplin/joplin样式设置/README.md)
+
+### Plugins
+
 - [Joplin Graph 插件](https://www.bilibili.com/video/BV1rb4y1v7cV/)
