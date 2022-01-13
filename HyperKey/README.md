@@ -1,16 +1,8 @@
 # HyperKey rules the **Window management** && **Software switch**
+> amethyst 版本请使用该命令切换到其他分支观看 `git checkout window-management-with-amethyst`
 
-用 HyperKey 无鼠标并且飞快地切换软件以及管理窗口
+用 HyperKey 全键盘并且飞快地切换软件以及管理窗口
 
-# Video
-
-- [视频讲解](https://www.bilibili.com/video/BV14r4y1m7yB/)
-- Timeline
-	- 0:00 效果演示
-	- 4:10 简介（涉及软件及其他平台） KeyBoard 一览
-	- 8:53 Amethyst && Shiftit 窗口管理
-	- 17:14 Alfred 软件切换
-	- 20:15 总结
 ## 思路
 左边管理窗口，右边切换软件
 
@@ -20,7 +12,7 @@
 
 ## 窗口管理 ｜ Amethyst
 
-Mac上没有炫酷的 `dwm`，我使用 [Amethyst](`https://github.com/ianyh/Amethyst`) 进行窗口管理(外加 [shiftit](https://github.com/fikovnik/ShiftIt) 辅助)
+Only `shiftit`
 
 ## 软件切换 | Alfred workflow
 
