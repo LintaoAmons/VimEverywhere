@@ -1,4 +1,4 @@
-# VimEverywhere
+# VimEverywhere(年久失修)
 **Learn vim once, Use everywhere in every places.**
 
 - 打造以 Vim 为基础的全键盘工作流.

@@ -1,0 +1,142 @@
+" ================================================================================================
+" = Leader commands ===================================== Start
+" ================================================================================================
+" leaderkey
+let mapleader=" "
+
+" nohl 关闭搜索高亮显示
+nnoremap <leader>nl :nohlsearch<CR>
+
+" ReformatCode 格式化代码CodeStyle
+nnoremap <leader>fm :action ReformatCode<CR>
+
+" Optimise Imports 格式化imports
+nnoremap <leader>fi :action OptimizeImports<CR>
+
+" Run code
+nnoremap <leader>rr :action Rerun<CR>
+nnoremap <leader>rt :action RerunTests<CR>
+" Refresh gradle
+nnoremap <leader>rg :action ExternalSystem.RefreshAllProjects<CR>
+
+" Insert into next bracket 直接跳转到下一个括号内开始插入
+nnoremap <leader>i f(a
+vnoremap <leader>i f(a
+
+" Add ; at the end of current line 直接跳转到本行末尾插入;号
+nnoremap <leader>j A;<ESC>
+vnoremap <leader>j A;<ESC>
+
+" Gotos 文档跳转
+nnoremap ge :action GotoNextError<CR>
+vnoremap ge :action GotoNextError<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gm :action MethodUp<CR>
+
+nnoremap <leader>ck :action CallHierarchy<CR>
+nnoremap <leader>mk :action MethodHierarchy<CR>
+
+" show bookmarks
+" instead of use `s` to represent show, use `w` instead
+" 🔥🔥 🔥🔥 🔥🔥 Here I want to use nnoremap <leader>ss :action FileStructurePopup<CR>
+
+nnoremap <leader>wb :action ShowBookmarks<ESC>
+vnoremap <leader>wb :action ShowBookmarks<ESC>
+nnoremap <leader>ws :action FileStructurePopup<CR>
+
+" ========================================= Git =========================================
+nnoremap <leader>gh :action Vcs.ShowTabbedFileHistory<CR>
+
+nnoremap <leader>gc :action Compare.Selected<CR>
+
+nnoremap <leader>gb :action Git.CompareWithBranch<CR>
+
+" Fold and unFold
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+" ========================================= window & pane & split ========================================
+" Unsplit editor 最大化显示当前编辑器pane, 关闭其他split
+nnoremap <leader>wo :action UnsplitAll<CR>
+vnoremap <leader>wo :action UnsplitAll<CR>
+
+nnoremap <leader>zz :action MaximizeEditorInSplit<CR>
+vnoremap <leader>zz :action MaximizeEditorInSplit<CR>
+
+" Close active pane
+nnoremap <leader>wc <c-w>c
+vnoremap <leader>wc <c-w>c
+
+" ============================================ Floating Window ===========================================
+nnoremap sd :action QuickJavaDoc<CR>
+nnoremap se :action ShowErrorDescription<CR>
+nnoremap st :action ExpressionTypeInfo<CR>
+
+" ================================================ Refactor ================================================
+" refactor -> rename
+map <leader>rn :action RenameElement<CR>
+" extract method/function
+vnoremap <leader>em :action ExtractMethod<CR>
+" extract constant
+vnoremap <leader>ec :action IntroduceConstant<CR>
+" extract field
+vnoremap <leader>ef :action IntroduceField<CR>
+" extract variable
+vnoremap <leader>ev :action IntroduceVariable<CR>
+" rollback line
+nnoremap <leader>rb :action Vcs.RollbackChangedLines<CR>
+
+" ================================================ Debug ================================================
+nnoremap <leader>db :action ToggleLineBreakpoint<CR>
+nnoremap <leader>di :action StepInto<CR>
+nnoremap <leader>dn :action StepOver<CR>
+nnoremap <leader>dr :action Resume<CR>
+
+" Hide All windows
+nnoremap <leader>cc :action HideAllWindows<CR>
+vnoremap <leader>cc :action HideAllWindows<CR>
+
+" ================================================================================================
+" = Extensions ===================================== Start
+" ================================================================================================
+set surround
+set argtextobj
+set ReplaceWithRegister
+set NERDTree
+
+nnoremap ma mA
+nnoremap 'a 'A
+nnoremap ms mS
+nnoremap 's 'S
+nnoremap md mD
+nnoremap 'd 'D
+nnoremap mf mF
+nnoremap 'f 'F
+
+nnoremap ga '.
+
+nnoremap <leader>e :action ActivateProjectToolWindow<CR>
+
+" argtextobj
+let g:argtextobj_pairs="(:),{:},<:>"
+
+" ================================================================================================
+" = Other settings ===================================== Start
+" ================================================================================================
+set clipboard+=unnamed
+set ignorecase
+set scrolloff=30
+set history=200
+
+set number
+set relativenumber
+
+set incsearch
+set hlsearch
+set keep-english-in-normal
+set which-key
+set timeoutlen = 5000
+
+
+let g:WhichKeyDesc_windows_maximize = "<leader>wm maximize"
+
