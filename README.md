@@ -1,6 +1,9 @@
 # VimEverywhere(年久失修)
-**Learn vim once, Use everywhere in every places.**
 
+**看这里** >>>>> [Nvim 配置](https://github.com/LintaoAmons/LunarVim)
+
+**Learn vim once, Use everywhere in every places.**
+ 
 - 打造以 Vim 为基础的全键盘工作流.
 	- 在 IDEA, VScode, terminal 使用 Vim，写代码
 	- 在 Chrome, Firefox 中使用 Vim, 浏览网页，切换Tab，复制内容
