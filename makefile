@@ -1,3 +1,3 @@
 update:
 	git pull --rebase
-	update.sh
+	./update.sh
