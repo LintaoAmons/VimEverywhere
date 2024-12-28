@@ -26,6 +26,7 @@ paths=(
 for i in "${!items[@]}"; do
     item=${items[$i]}
     path=${paths[$i]}
+    echo "== $item: $path =="
     if [[ -n "$path" ]]; then
         rsync -avz --delete "$path" "./$item"
     else
