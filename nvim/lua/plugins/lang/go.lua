@@ -1,0 +1,140 @@
+return {
+  -- # Syntax hightlight
+  {
+    "nvim-treesitter/nvim-treesitter",
+    -- use opts to extend the ensure_installed table
+    opts = function(_, opts)
+      vim.g.config_utils.opts_ensure_installed(opts, { "go", "gomod", "gowork", "gosum" })
+    end,
+  },
+
+  -- # LSP
+  -- ## ensure_install lang specfic LSP
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      vim.g.config_utils.opts_ensure_installed(opts, { "gopls" })
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = function(_, opts)
+      -- ## extend the servers table
+      opts.servers = opts.servers or {}
+      opts.servers.lua_ls = {
+          settings = {
+            gopls = {
+              gofumpt = true,
+              codelenses = {
+                gc_details = false,
+                generate = true,
+                regenerate_cgo = true,
+                run_govulncheck = true,
+                test = true,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+              },
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+              analyses = {
+                fieldalignment = true,
+                nilness = true,
+                unusedparams = true,
+                unusedwrite = true,
+                useany = true,
+              },
+              usePlaceholders = true,
+              completeUnimported = true,
+              staticcheck = true,
+              directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
+              semanticTokens = true,
+            },
+          },
+        }
+    end,
+  },
+
+  -- Debug
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      vim.g.config_utils.opts_ensure_installed(opts, { "delve" })
+    end,
+  },
+
+  {
+    "nvimtools/none-ls.nvim",
+    optional = true,
+    dependencies = {
+      {
+        "williamboman/mason.nvim",
+        opts = { ensure_installed = { "gomodifytags", "impl" } },
+      },
+    },
+    opts = function(_, opts)
+      local nls = require("null-ls")
+      opts.sources = vim.list_extend(opts.sources or {}, {
+        nls.builtins.code_actions.gomodifytags,
+        nls.builtins.code_actions.impl,
+        nls.builtins.formatting.goimports,
+        nls.builtins.formatting.gofumpt,
+      })
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        go = { "goimports", "gofumpt" },
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    optional = true,
+    dependencies = {
+      {
+        "leoluz/nvim-dap-go",
+        opts = {},
+      },
+    },
+  },
+  {
+    "nvim-neotest/neotest",
+    optional = true,
+    dependencies = {
+      "fredrikaverpil/neotest-golang",
+    },
+    opts = {
+      adapters = {
+        ["neotest-golang"] = {
+          -- Here we can set options for neotest-golang, e.g.
+          -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+          dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+        },
+      },
+    },
+  },
+
+  -- Filetype icons
+  {
+    "echasnovski/mini.icons",
+    opts = {
+      file = {
+        [".go-version"] = { glyph = "", hl = "MiniIconsBlue" },
+      },
+      filetype = {
+        gotmpl = { glyph = "󰟓", hl = "MiniIconsGrey" },
+      },
+    },
+  },
+}

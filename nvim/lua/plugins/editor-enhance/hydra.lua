@@ -1,0 +1,1 @@
+return {"nvimtools/hydra.nvim"}
