@@ -28,7 +28,7 @@ for i in "${!items[@]}"; do
     path=${paths[$i]}
     echo "== $item: $path =="
     if [[ -n "$path" ]]; then
-        rsync -avz --delete "$path" "./$item"
+        rsync -avz --delete "$path/" "./$item"
     else
         echo "Warning: Path for $item is not set or is empty. Skipping synchronization."
     fi
