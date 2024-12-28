@@ -1,13 +1,11 @@
 # VimEverywhere(年久失修)
 
-**看这里** >>>>> [Nvim 配置](https://github.com/LintaoAmons/LunarVim)
-
-**Learn vim once, Use everywhere in every places.**
+**Learn one vim, Use everywhere.**
  
 - 打造以 Vim 为基础的全键盘工作流.
 	- 在 IDEA, VScode, terminal 使用 Vim，写代码
 	- 在 Chrome, Firefox 中使用 Vim, 浏览网页，切换Tab，复制内容
-	- 在 Joplin 使用Vim，记笔记，构建知识库
+	- 在 Obsidian 使用Vim，记笔记，构建知识库
 	- 使用键盘切换软件窗口，分屏，调出常用软件
 
 ## 推荐观看顺序
@@ -27,11 +25,4 @@
 	- [视频链接](https://www.bilibili.com/video/BV14r4y1m7yB/)
 	- [HyperKey的设置请看键盘设置一节](./Vim/karabiner改键设置/README.md)
 
-## Joplin | Free, Security, Multi-platform | 专属知识库构建软件
-
-- [Joplin简介视频链接](https://www.bilibili.com/video/BV1hY41147ix/)
-- [Joplin 样式设置](./Joplin/joplin样式设置/README.md)
-
-### Plugins
-
-- [Joplin Graph 插件](https://www.bilibili.com/video/BV1rb4y1v7cV/)
+TODO: add sponsor
