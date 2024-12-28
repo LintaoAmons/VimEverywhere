@@ -14,15 +14,20 @@ else
     exit 1
 fi
 
-# Declare an associative array containing the tools and their configuration paths
-declare -A share_items=(
-  [nvim]="$NVIM"
+# Define items and paths using simple array
+items=(
+    "nvim"
+)
+paths=(
+    "$NVIM"
 )
 
-# Iterate through the array and synchronize each configuration file
-for item in "${!share_items[@]}"; do
-    if [[ -n "${share_items[$item]}" ]]; then
-        rsync -avz --delete "${share_items[$item]}" "./$item"
+# Iterate through the items and synchronize each configuration file
+for i in "${!items[@]}"; do
+    item=${items[$i]}
+    path=${paths[$i]}
+    if [[ -n "$path" ]]; then
+        rsync -avz --delete "$path" "./$item"
     else
         echo "Warning: Path for $item is not set or is empty. Skipping synchronization."
     fi
