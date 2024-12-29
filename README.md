@@ -1,4 +1,4 @@
-# VimEverywhere(年久失修)
+# Vim Everywhere
 
 **Learn one vim, Use everywhere.**
  
