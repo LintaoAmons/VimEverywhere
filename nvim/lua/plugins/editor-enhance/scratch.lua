@@ -1,5 +1,7 @@
 vim.keymap.set({ "n", "v", "i" }, "<M-C-n>", "<cmd>Scratch<cr>")
 vim.keymap.set({ "n", "v", "i" }, "<M-C-o>", "<cmd>ScratchOpen<cr>")
+vim.keymap.set({ "n", "v", "i" }, "<D-C-n>", "<cmd>Scratch<cr>")
+vim.keymap.set({ "n", "v", "i" }, "<D-C-o>", "<cmd>ScratchOpen<cr>")
 
 return {
   "LintaoAmons/scratch.nvim",

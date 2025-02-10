@@ -1,3 +1,5 @@
+if true then return {} end
+
 return {
   "yetone/avante.nvim",
   enabled = false,
@@ -6,7 +8,7 @@ return {
   opts = {
     -- provider = "openai", -- Only recommend using Claude
     claude = {
-      endpoint = "https://****",
+      endpoint = "https://" .. os.getenv("ANTHROPIC_DOMAIN"),
       model = "claude-3-5-sonnet-20240620",
       temperature = 0,
       max_tokens = 4096,

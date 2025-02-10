@@ -1,7 +1,4 @@
-local function open_yazi()
-  vim.keymap.set("n", "<leader>e", "<cmd>Yazi<cr>", { noremap = true, silent = true })
-end
-open_yazi()
+vim.keymap.set("n", "<leader>ee", "<cmd>Yazi<cr>", { noremap = true, silent = true })
 
 return {
   "mikavilpas/yazi.nvim",

@@ -30,22 +30,26 @@ return { -- Fuzzy Finder (files, lsp, etc)
     --  - Insert mode: <c-/>
     --  - Normal mode: ?
     require("telescope").setup({
-      -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
-      --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
-      -- pickers = {}
+      pickers = {
+        live_grep = {
+          file_ignore_patterns = { "node_modules", ".git", ".venv" },
+          additional_args = function(_)
+            return { "--hidden" }
+          end,
+        },
+      },
       defaults = {
         mappings = {
           i = {
-            ["<m-w>"] = require("telescope.actions").close,
+            ["<M-w>"] = require("telescope.actions").close,
+            ["<D-w>"] = require("telescope.actions").close,
+            -- https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes#mapping-c-u-to-clear-prompt
+            ["<C-u>"] = false
           },
           n = {
-            ["<m-w>"] = require("telescope.actions").close,
+            ["<M-w>"] = require("telescope.actions").close,
+            ["<D-w>"] = require("telescope.actions").close,
           },
         },
         layout_strategy = "horizontal",

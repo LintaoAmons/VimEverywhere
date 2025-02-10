@@ -1,3 +1,5 @@
+if true then return {} end -- disable infavor of vgit
+
 return {
   "echasnovski/mini.diff",
   version = false,

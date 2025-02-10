@@ -2,12 +2,13 @@ local function setup_keybinding_and_commands()
   local toggle_debug_ui = function()
     require("dapui").toggle()
   end
-  vim.api.nvim_create_user_command("ToggleDebugUI", toggle_debug_ui, {})
+  vim.api.nvim_create_user_command("DebugUIToggle", toggle_debug_ui, {})
 
   local eval = function()
     require("dapui").eval()
   end
   vim.keymap.set("n", "<M-5>", eval)
+  vim.keymap.set("n", "<D-5>", eval)
   vim.api.nvim_create_user_command("DebugEval", eval, {})
 
   local start_or_continue = function()
@@ -59,6 +60,8 @@ return {
       dapui.setup(opts)
       dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open({})
+        vim.keymap.set("v", "<M-k>", require("dapui").eval, { buffer = 0 })
+        vim.keymap.set("v", "<D-k>", require("dapui").eval, { buffer = 0 })
         -- vim.g.is_debuging = true
       end
     end,
@@ -106,6 +109,7 @@ return {
 
   {
     "mfussenegger/nvim-dap",
+    commit = "7ff6936010b7222fea2caea0f67ed77f1b7c60dd",
 
     dependencies = {
 

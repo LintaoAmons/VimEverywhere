@@ -6,6 +6,7 @@ end
 reveal_current_file()
 
 vim.keymap.set("n", "<M-1>", "<cmd>Neotree toggle<cr>", { desc = "ExplorerToggle" })
+vim.keymap.set("n", "<D-1>", "<cmd>Neotree toggle<cr>", { desc = "ExplorerToggle" })
 
 return {
   { import = "plugins.editor-core.file-navi" },

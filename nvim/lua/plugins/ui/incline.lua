@@ -1,4 +1,4 @@
--- if true then return {} end -- disable this file
+if true then return {} end -- disable this file
 
 return {
   "b0o/incline.nvim",

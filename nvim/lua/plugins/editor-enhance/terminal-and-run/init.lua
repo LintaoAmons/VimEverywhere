@@ -26,23 +26,6 @@ local function cd_to_buffer_location()
 end
 vim.keymap.set({ "n", "v" }, "<leader>so", cd_to_buffer_location)
 
-local function cd_to_buffer_project_root()
-  local editor = require("util.editor")
-  local project_path = editor.find_project_path()
-  if not project_path then
-    project_path = editor.buf.read.get_buf_abs_dir_path()
-  end
-  local cmd = "cd " .. project_path
-  local terminal = editor.get_first_visible_terminal()
-  if not terminal then
-    return log.error("No visible terminal found")
-  end
-  editor.buf.write.send_to_terminal_buf(terminal.id, cmd)
-  vim.cmd([[TmuxNavigateDown]])
-  vim.cmd([[norm! i]])
-end
-vim.keymap.set({ "n", "v" }, "<leader>si", cd_to_buffer_project_root)
-
 local function run_current_file()
   local cmd = function()
     if vim.bo.ft == "javascript" then
@@ -53,6 +36,7 @@ local function run_current_file()
   end
 
   vim.keymap.set({ "n", "v" }, "<M-r>", cmd)
+  vim.keymap.set({ "n", "v" }, "<D-r>", cmd)
   vim.api.nvim_create_user_command("RunFile", cmd, {})
 end
 run_current_file()
@@ -100,6 +84,8 @@ function _G.set_terminal_keymaps()
   vim.keymap.set("t", "<C-t>", [[<C-\><C-n><C-t>]], opts)
   vim.keymap.set("t", "<M-w>", [[<Cmd>wincmd c<CR>]], opts)
   vim.keymap.set("t", "<M-3>", [[<C-\><C-n><M-3>]], opts) -- toggle disposable terminal
+  vim.keymap.set("t", "<D-w>", [[<Cmd>wincmd c<CR>]], opts)
+  vim.keymap.set("t", "<D-3>", [[<C-\><C-n><M-3>]], opts) -- toggle disposable terminal
 end
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
 

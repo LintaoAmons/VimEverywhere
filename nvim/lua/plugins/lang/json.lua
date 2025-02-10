@@ -31,24 +31,4 @@ return {
       },
     },
   },
-
-  {
-    "LintaoAmons/context-menu.nvim",
-    opts = function(_, opts)
-      require("context-menu").setup({
-        menu_items = {
-          {
-            cmd = "Jq Query",
-            ft = { "json" },
-            action = {
-              type = "callback",
-              callback = function(_)
-                jq_query()
-              end,
-            },
-          },
-        },
-      })
-    end,
-  },
 }

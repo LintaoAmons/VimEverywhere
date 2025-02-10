@@ -15,9 +15,9 @@ opt.mouse          = 'a'      -- Enable mouse
 opt.writebackup    = false    -- Don't store backup
 opt.undofile       = true     -- Enable persistent undo
 opt.swapfile       = false
-opt.guifont        = 'FiraCode Nerd Font:h16'
 opt.cmdheight      = 0
 opt.clipboard      = ""
+opt.guifont        = "Hack Nerd Font Mono"
 
 -- UI =========================================================================
 opt.conceallevel = 0

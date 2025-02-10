@@ -4,6 +4,7 @@ vim.api.nvim_create_user_command("SplitHorizotally", command1, {})
 
 local quitNvim = "qa!"
 vim.keymap.set("n", "<M-q>", "<cmd>" .. quitNvim .. "<cr>")
+vim.keymap.set("n", "<D-q>", "<cmd>" .. quitNvim .. "<cr>")
 vim.api.nvim_create_user_command("QuitNvim", quitNvim, {})
 
 local no_highlight = "nohlsearch"

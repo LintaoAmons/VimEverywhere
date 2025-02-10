@@ -1,9 +1,8 @@
+-- NOTE: in favor of leap
 -- stylua: ignore start
 -- vim.keymap.set({ "n", "x", "o" }, "ss", function() require("flash").treesitter() end, {})
+if true then return {} end
 -- stylua: ignore end
-if true then
-  return {}
-end
 
 return {
   "folke/flash.nvim",

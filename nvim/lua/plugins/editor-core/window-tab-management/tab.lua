@@ -9,3 +9,5 @@ vim.keymap.set("n", "tt", "<cmd>" .. tabClose .. "<cr>")
 
 local find_tab = "FzfLua tabs"
 vim.keymap.set("n", "tk", ":" .. find_tab .. "<cr>")
+
+return {}

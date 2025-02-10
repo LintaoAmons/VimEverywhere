@@ -1,4 +1,1 @@
-## 去 https://oatnil.top 看看我的配置解析
-
-## Go to https://oatnil.top to see my configuration explanation
-
+## 去到 https://oatnil.top/roadmap?topic=neovimConfig 看看我的配置解析

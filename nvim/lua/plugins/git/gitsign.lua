@@ -1,4 +1,4 @@
-if true then return {} end -- disable neogit since my workflow don't use it
+if true then return {} end -- disable gitsign in favor of minidiff
 
 local prev_hunk = function()
   require("gitsigns").prev_hunk({ navigation_message = false })

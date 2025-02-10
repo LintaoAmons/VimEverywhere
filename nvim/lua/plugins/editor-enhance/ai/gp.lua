@@ -1,12 +1,18 @@
+if true then return {} end
+
 return {
   "robitx/gp.nvim",
-  enabled = false,
   config = function()
     local conf = {
       -- For customization, refer to Install > Configuration in the Documentation/Readme
+      --
       providers = {
+        openai = {
+          endpoint = "http://" .. os.getenv("OPENAI_DOMAIN") .. "/v1/chat/completions",
+          secret = os.getenv("OPENAI_API_KEY"),
+        },
         anthropic = {
-          endpoint = "https://****",
+          endpoint = "https://" .. os.getenv("ANTHROPIC_DOMAIN") .. "/v1/messages",
           secret = os.getenv("ANTHROPIC_API_KEY"),
         },
       },

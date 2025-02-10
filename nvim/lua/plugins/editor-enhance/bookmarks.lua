@@ -3,16 +3,14 @@ vim.keymap.set("n", "mm", "<cmd>" .. "BookmarksMark" .. "<cr>")
 vim.keymap.set("n", "ma", "<cmd>" .. "BookmarksCommands" .. "<cr>")
 vim.keymap.set("n", "ms", "<cmd>" .. "BookmarksInfoCurrentBookmark" .. "<cr>")
 vim.keymap.set("n", "mo", "<cmd>" .. "BookmarksGoto" .. "<cr>")
-vim.keymap.set("n", "mw", "<cmd>" .. "BookmarksGotoNext" .. "<cr>")
-vim.keymap.set("n", "me", "<cmd>" .. "BookmarksGotoPrev" .. "<cr>")
 
 local function hydra_config()
-  local Hydra = require('hydra')
+  local Hydra = require("hydra")
   Hydra({
-      name = "Bookmarks",
-      mode = 'n',
-      body = '<leader>m',
-      hint = [[
+    name = "Bookmarks",
+    mode = "n",
+    body = "<leader>m",
+    hint = [[
       Bookmark Navigation
       
       ^  _j_: Next in List     _J_: Next Bookmark
@@ -20,12 +18,12 @@ local function hydra_config()
       ^
       ^ _<Esc>_: Exit
       ]],
-      heads = {
-        { 'j', '<cmd>BookmarksGotoNextInList<cr>' },
-        { 'k', '<cmd>BookmarksGotoPrevInList<cr>' },
-        { 'J', '<cmd>BookmarksGotoNext<cr>' },
-        { 'K', '<cmd>BookmarksGotoPrev<cr>' },
-      },
+    heads = {
+      { "j", "<cmd>BookmarksGotoNextInList<cr>" },
+      { "k", "<cmd>BookmarksGotoPrevInList<cr>" },
+      { "J", "<cmd>BookmarksGotoNext<cr>" },
+      { "K", "<cmd>BookmarksGotoPrev<cr>" },
+    },
   })
 end
 
@@ -34,11 +32,12 @@ return {
   -- recommand, pin the plugin at specific version for stability
   -- backup your db.json file when you want to upgrade the plugin
   -- tag = "v2.0.0",
-  dir = "/Users/oatnil/Documents/oatnil/vim/bookmarks.nvim",
+  -- dir = "/Users/oatnil/Documents/oatnil/vim/bookmarks.nvim",
+  dir = "/Volumes/t7ex/Documents/oatnil/release/bookmarks.nvim",
   dependencies = {
-    {"kkharji/sqlite.lua"},
-    {"nvim-telescope/telescope.nvim"},
-    {"stevearc/dressing.nvim"} -- optional: better UI
+    { "kkharji/sqlite.lua" },
+    { "nvim-telescope/telescope.nvim" },
+    { "stevearc/dressing.nvim" }, -- optional: better UI
   },
   config = function()
     hydra_config()
@@ -63,6 +62,16 @@ return {
         },
       },
 
+      codecompanion = {
+        enabled = true,
+      },
+
+      picker = {
+        -- telescope entry display generation logic
+        ---@type: fun(bookmark: Bookmarks.Node): string
+        entry_display = nil,
+      },
+
       -- Bookmark position calibration
       calibrate = {
         -- Auto adjust window position when opening buffer
@@ -82,7 +91,6 @@ return {
             end
           end)
         end,
-
         -- Example: Create list for current project
         create_project_list = function()
           local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
@@ -93,12 +101,17 @@ return {
         end,
       },
 
-      -- stylua: ignore start
-      ---@type { keymap: { [string]: string|string[] } } 
       treeview = {
-
-        ---@type fun(node: Bookmarks.Node): string | nil
-        render_bookmark = nil,
+        highlights = {
+          active_list = {
+            bg = "#A13C3C", -- Background color
+            fg = "#ffffff", -- Text color
+            bold = true, -- Make text bold
+          },
+        },
+        active_list_icon = "👀 ",
+        ---@type { keymap: { [string]: string|string[] } } 
+        -- stylua: ignore start
         keymap = {
           quit = { "q", "<ESC>" },      -- Close the tree view window and return to previous window
           refresh = "R",                -- Reload and redraw the tree view
@@ -116,8 +129,8 @@ return {
           copy = "c",
           paste = "p",
         },
+        -- stylua: ignore end
       },
-      -- stylua: ignore end
     }
     require("bookmarks").setup(opts)
   end,

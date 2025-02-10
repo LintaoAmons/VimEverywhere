@@ -30,26 +30,4 @@ return {
       { "nvim-telescope/telescope-fzy-native.nvim" },
     },
   },
-
-  {
-    "LintaoAmons/context-menu.nvim",
-    opts = function()
-      require("context-menu").setup({
-        close_menu = { "q", "<ESC>", "<M-l>" },
-        menu_items = {
-          {
-            order = 1,
-            keymap = "<c-o>",
-            cmd = "OpenFileInAllPlace",
-            action = {
-              type = "callback",
-              callback = function(_)
-                vim.cmd([[SmartOpenAll]])
-              end,
-            },
-          },
-        },
-      })
-    end,
-  },
 }

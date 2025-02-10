@@ -1,3 +1,5 @@
+if true then return {} end -- back to indent-backline
+
 return {
   "shellRaining/hlchunk.nvim",
   event = { "BufReadPre", "BufNewFile" },
