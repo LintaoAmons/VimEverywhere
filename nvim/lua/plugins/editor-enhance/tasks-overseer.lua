@@ -1,9 +1,11 @@
-vim.keymap.set({ "n", "v" }, "<Leader>aj", "<cmd>OverseerRun<cr>", {})
-vim.keymap.set({ "n", "v" }, "<Leader>au", "<cmd>OverseerToggle<cr>", {})
+-- vim.keymap.set({ "n", "v" }, "<Leader>aj", "<cmd>OverseerRun<cr>", {})
+-- vim.keymap.set({ "n", "v" }, "<Leader>au", "<cmd>OverseerToggle<cr>", {})
 
 return {
   {
     "stevearc/overseer.nvim",
+    -- disable it in favor of toggleterm and aerospace workflow
+    enabled = false,
     commit = "35b729b746a4d65c83efee5b5643f07c2c1105d2",
     opts = {
       templates = {

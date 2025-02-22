@@ -1,5 +1,5 @@
 local opts = { noremap = true, silent = true }
-vim.keymap.set({ "n", "v" }, "<Leader>aa", function()
+vim.keymap.set({ "n", "v" }, "<Leader>aj", function()
   vim.cmd("CodeCompanionChat Add")
   -- Find and focus the CodeCompanion buffer window
   for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -78,9 +78,9 @@ vim.api.nvim_create_user_command("CodeCompanionSave", function(opts)
 end, { nargs = "*" })
 
 return {
-  -- "olimorris/codecompanion.nvim",
+  "olimorris/codecompanion.nvim",
   -- dir ="/Volumes/t7ex/Documents/Github/codecompanion.nvim",
-  dir = "/Volumes/t7ex/Documents/oatnil/vim/codecompanion.nvim",
+  -- dir = "/Volumes/t7ex/Documents/oatnil/vim/codecompanion.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
@@ -220,6 +220,29 @@ return {
             },
           },
         },
+        ["aws saa"] = {
+          strategy = "chat",
+          description = "aws saa helper",
+          opts = {
+            index = 9,
+            default_prompt = true,
+            auto_submit = true,
+          },
+          prompts = {
+            {
+              role = "system",
+              content = [[You are an expert at AWS Cloud Service and helping me to pass the AWS SAA exam. ]],
+            },
+            {
+              role = "user",
+              contains_code = true,
+              content = function()
+                return " #buffer\n 解答这个题目，并扩展解释其中提到的各种AWS 概念"
+              end,
+            },
+          },
+        },
+
         ["Config Change Commit"] = {
           strategy = "chat",
           description = "my config changed commit",
@@ -255,6 +278,11 @@ Short Summary.
             },
           },
         },
+      },
+      display = {
+        -- diff = {
+        --   -- provider = "mini_diff",
+        -- },
       },
       keymaps = {
         send = {

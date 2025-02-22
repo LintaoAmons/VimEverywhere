@@ -1,8 +1,7 @@
-if true then return {} end
-
 return {
-  "yetone/avante.nvim",
-  enabled = false,
+  dir = "/Volumes/t7ex/Documents/Github/avante.nvim",
+  -- "yetone/avante.nvim",
+  -- enabled = false,
   event = "VeryLazy",
   build = "make",
   opts = {
@@ -12,6 +11,11 @@ return {
       model = "claude-3-5-sonnet-20240620",
       temperature = 0,
       max_tokens = 4096,
+    },
+    file_selector = {
+      provider = "snacks",
+      -- Options override for custom providers
+      provider_opts = {},
     },
     mappings = {
       ask = "<leader>aa",
@@ -31,7 +35,7 @@ return {
         prev = "[[",
       },
       submit = {
-        normal = "<CR>",
+        normal = "<C-s>",
         insert = "<C-s>",
       },
       toggle = {

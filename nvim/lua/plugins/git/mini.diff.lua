@@ -1,7 +1,6 @@
-if true then return {} end -- disable infavor of vgit
-
 return {
   "echasnovski/mini.diff",
+  enabled = false,
   version = false,
   config = function()
     local opts = -- No need to copy this inside `setup()`. Will be used automatically.

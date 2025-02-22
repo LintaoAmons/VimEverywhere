@@ -1,17 +1,24 @@
 ---new a toggleterm
 ---@param cmd string?
 ---@param name string?
+---@param direction? 'vertical' | 'horizontal' | 'tab' | 'float'
+---@param size number? -- size seems like not working, Terminal:new args don't have size
 ---@return Terminal # toggleterm Terminal type
-local function new_term(cmd, name)
+local function new_term(cmd, name, direction, size)
+  -- local function new_term(cmd, name, direction, size)
   cmd = cmd or "zsh"
   name = name or (cmd:sub(1, 1):upper() .. cmd:sub(2))
+  direction = direction or "float"
+  size = size or 20
+
   local Terminal = require("toggleterm.terminal").Terminal
   local created_term = Terminal:new({
+    size = size,
     cmd = cmd,
     dir = "git_dir",
     name = name,
     display_name = name,
-    direction = "float",
+    direction = direction,
     float_opts = {
       border = "double",
     },
@@ -40,46 +47,20 @@ local function new_term(cmd, name)
       vim.cmd("startinsert!")
     end,
   })
-
-  vim.api.nvim_create_user_command("ToggleTerm" .. name, function()
-    created_term:toggle()
-  end, {})
   return created_term
 end
-
----new a named terminal
----@param name string
-local function new_named_terminal(name)
-  local created_term = new_term(nil, name)
-  created_term:toggle()
-end
-
-vim.api.nvim_create_user_command("NewNamedTerminal", function()
-  vim.ui.input({ prompt = "Enter terminal name: " }, function(input)
-    if input then
-      new_named_terminal(input)
-    end
-  end)
-end, {})
-
-vim.api.nvim_create_user_command("NewTerminal", function()
-  new_term():toggle()
-end, {})
-
-vim.keymap.set("n", "<C-\\>", function()
-  new_term():toggle()
-end, { noremap = true, silent = true })
 
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
   config = function()
     require("toggleterm").setup({ size = 20 })
-    -- local base_term = new_base_term()
-    new_term("htop")
-    new_term("lazydocker")
-    new_term("k9s")
-    new_term("lazygit")
+
+    -- TODO: Aider not working inside neovim's terminal
+    -- local aider = new_term("aider --model sonnet", "Aider", "vertical", 10)
+    -- vim.keymap.set({ "n", "v", "t" }, "<C-m>", function()
+    --   aider:toggle()
+    -- end, {})
 
     vim.keymap.set("n", "<M-3>", "<cmd>ToggleTerm name=base<cr>")
     vim.keymap.set("n", "<D-3>", "<cmd>ToggleTerm name=base<cr>")

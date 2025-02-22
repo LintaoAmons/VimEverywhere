@@ -6,10 +6,11 @@ vim.keymap.set({ "v", "n", "t" }, "<C-CR>", function() -- same function by keybi
 end, {})
 
 return {
+  -- "LintaoAmons/context-menu.nvim",
   dir = "/Volumes/t7ex/Documents/oatnil/vim/context-menu.nvim",
   config = function()
     require("context-menu").setup({
-      modules = { "markdown", "git", "http", "copy" },
+      modules = { "markdown", "git", "http", "copy", "json" },
     })
     require("context-menu").add_items({
       {
@@ -18,22 +19,6 @@ return {
         not_ft = { "markdown", "toggleterm" },
         action = function(_)
           vim.lsp.buf.code_action()
-        end,
-      },
-      {
-        order = 2,
-        name = "Run Test",
-        not_ft = { "markdown" },
-        filter_func = function(context)
-          local a = context.filename
-          if string.find(a, ".test.") or string.find(a, "spec.") then
-            return true
-          else
-            return false
-          end
-        end,
-        action = function(_)
-          require("neotest").run.run()
         end,
       },
     })

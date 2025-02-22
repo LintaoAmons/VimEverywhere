@@ -1,0 +1,8 @@
+### Anthropic Claude
+POST https://api.anthropic.com/v1/complete
+anthropic-version: 2023-06-01
+content-type: application/json
+x-api-key: {{CLAUDE_TOKEN}}
+
+{ "model": "claude-2.1", "max_tokens_to_sample": 1024, "prompt": "Human: Show me an example of a simple Typescript program.\n\nAssistant:" }
+
