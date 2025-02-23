@@ -6,7 +6,7 @@ return {
     config = function()
       -- -- Setup is required, even if you don't pass any options
       require("kulala").setup({
-        default_view = "verbose",
+        default_view = "body",
         winbar = true,
       })
     end,

@@ -9,12 +9,13 @@ Content-Type: application/json
 
 {
     "username": "demo",
-    "password": "demo123"
+    "password": "demo123",
+    "access_token": "asdfasdfasdfasdf"
 }
 
 ### Access protected resource with Bearer token
 GET https://httpbin.org/bearer
-Authorization: Bearer {{login.response.body.json.password}}
+Authorization: Bearer {{login.response.body.json.access_token}}
 
 ### Access protected resource with custom token header
 GET https://httpbin.org/headers

@@ -1,0 +1,33 @@
+### Simple GET request
+GET https://httpbin.org/get
+
+### GET with query parameters
+GET https://httpbin.org/get?name=lintao&age=25
+
+### POST with JSON body
+POST https://httpbin.org/post
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john@example.com"
+}
+
+### PUT with headers
+PUT https://httpbin.org/put
+Content-Type: application/json
+X-Custom-Header: test-value
+
+{
+    "id": 1,
+    "status": "updated"
+}
+
+### DELETE request
+DELETE https://httpbin.org/delete
+
+### GET with multiple headers
+GET https://httpbin.org/headers
+Accept: application/json
+User-Agent: My-Test-Client
+Authorization: Bearer test-token

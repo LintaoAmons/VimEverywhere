@@ -1,0 +1,15 @@
+### Basic GET request
+GET https://api.thecatapi.com/v1/images/search
+
+@BASE_URL = https://api.thecatapi.com/v1
+@API_KEY = your_api_key_here
+
+### GET request with variables and request parameters
+GET {{BASE_URL}}/images/search?limit=3
+
+### Request with environment variables
+GET {{FROM_ENV_FILE_URL}}/breeds
+
+### Named request
+# @name SIAMESE_CATS
+GET {{BASE_URL}}/breeds/search?q=siamese
